@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 4</title>
+</head>
+
+<body>
+	<script>
+		/* Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: 
+		кількість парних, кількість додатних, кількість більших за 100.*/
+		//функція для знаходження парних чисел
+		function getEven (num1, num2, num3) {
+			let counterEven = 0
+			for (let i = 0; i <= arguments.length; i++) {
+				if (arguments[i] % 2 === 0) counterEven++
+			}
+			return counterEven
+		}
+		//функція для знаходження кількість додатніх чисел
+		function getPlusNumber (num1, num2, num3) {
+			let counterPlus = 0
+			for (let i = 0; i <= arguments.length; i++) {
+				if (arguments[i] > 0) counterPlus++
+			}
+			return counterPlus
+		}
+		//функція для знаходження кількість додатніх чисел
+		function getNumberBigThenHundred (num1, num2, num3) {
+			let counterMoreThenHundred = 0
+			for (let i = 0; i <= arguments.length; i++) {
+				if (arguments[i] > 100) counterMoreThenHundred++
+			}
+			return counterMoreThenHundred
+		}
+		//загальна функція
+		function showResult (num1, num2, num3) {
+			document.write(`<p>Кількість парних чисел : ${getEven(num1, num2, num3)}</p>`)
+			document.write(`<p>Кількість додатніх чисел : ${getPlusNumber(num1, num2, num3)}</p>`)
+			document.write(`<p>Кількість чисел більших за 100: ${getNumberBigThenHundred(num1, num2, num3)}</p>`)
+		}
+		//отримання чисел від користувача
+		const userNumberOne = parseFloat(prompt('Введіть перше число'))
+		const userNumberTwo = parseFloat(prompt('Введіть друге число'))
+		const userNumberThree = parseFloat(prompt('Введіть третє число'))
+		//
+		showResult(userNumberOne, userNumberTwo, userNumberThree)		
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style.css">
+	<title>Task 8</title>
+</head>
+
+<body>
+	<script>
+		/*Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди переходимо при кліку на зображення 
+		(тег img повине знаходитись у середині тега a: <a> <img src=”шлях”> </a>*/
+		function makeCart (image, title, way) {
+			document.write(`<h1>${title}</h1><a href="${way}"><img src="image${image}.jpg"></a>`)
+		}
+		const userImage = parseInt(prompt('Оберіть свою стихію \n 1 - Повітря \n 2 - Земля \n 3 - Вода \n 4 - Вогонь'))
+		const userTitle = prompt('Який ваший дивіз?')
+		const userWay = prompt('Введіть посилання')
+		makeCart(userImage, userTitle, userWay)
+	</script>
+</body>
+</html>

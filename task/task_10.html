@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task 10</title>
+</head>
+
+<body>
+	<script>
+		//Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.
+		function getSumPositiveNumbers (arr) {
+			let sumPositiveNumbers = 0
+			let counterNumberPositive = 0
+			for (let i = 0; i < arr.length; i++) {
+				if (arr[i] > 0) {
+					counterNumberPositive++
+					sumPositiveNumbers+=arr[i]
+				}
+			}
+			return sumPositiveNumbers / counterNumberPositive
+		}
+		//отримуємо дані
+		let userTemperature = parseInt(prompt('Введіть кількість днів'))
+		let numberTemperatures = []
+		for (let i = 1; i <= userTemperature; i++) {
+			let numberTemperature = parseFloat(prompt(`Показник температури ${i} дня`))
+			numberTemperatures.push(numberTemperature)
+		}
+		//викликаємо функція
+		let result = getSumPositiveNumbers(numberTemperatures)
+		document.write(`<p>Середнє значення додатніх покахників температури: <span>${result}</span></p>`)
+	</script>
+</body>
+</html>
